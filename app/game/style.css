@@ -1,0 +1,206 @@
+body {
+    font-family: "Space Mono", sans-serif;
+}
+
+#canvas {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+* {
+  image-rendering: optimizeSpeed;             /* Older versions of FF          */
+  image-rendering: -moz-crisp-edges;          /* FF 6.0+                       */
+  image-rendering: -webkit-optimize-contrast; /* Safari                        */
+  image-rendering: -o-crisp-edges;            /* OS X & Windows Opera (12.02+) */
+  image-rendering: pixelated;                 /* Awesome future-browsers       */
+  -ms-interpolation-mode: nearest-neighbor;   /* IE                            */
+}
+
+#mask {
+    opacity: 1;
+    width: 100%;
+    height: 100%;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 2;
+    background: rgba(24, 24, 24, 0.75);
+}
+
+#mask-header {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    font-size: 72px;
+    top: 20%;
+    left: 0%;
+    z-index: 3;
+}
+
+#mask-subtext {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    font-size: 35px;
+    top: 40%;
+    left: 0%;
+    font-style: italic;
+    color: rgba(250, 244, 232, 1);
+    z-index: 3;
+}
+
+#mobile-controls {
+    display: none;
+    justify-content: space-between;
+    width: calc(100% - 3rem);
+    position: absolute;
+    top: 60%;
+    padding: 1.5rem;
+    align-items: center;
+}
+
+#mobile-controls #dpad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+#mobile-controls {
+    background-color: transparent;
+}
+
+#mobile-controls .control {
+    background-color: rgba(255,255,255,0.6);
+    border: none;
+}
+
+#mobile-control .spacer {
+    background-color: transparent;
+}
+
+#mobile-controls .control {
+    display: inline-block;
+    height: 3rem;
+    text-align: center;
+    width: 3rem;
+    color: #303030;
+    font-size: 1.6rem;
+}
+
+#mobile-controls .center {
+    background-color: rgba(255,255,255,0.6);
+}
+
+#mobile-controls button:active {
+    background-color: rgba(255,255,255,1);
+}
+
+
+
+@media screen and (max-aspect-ratio: 1/1) {
+    #mobile-controls {
+        display: flex;
+    }
+
+    #controls {
+        display: none;
+    }
+}
+
+html, body {
+    margin: 0;
+    background-color: black;
+    color: #f5f4f0;
+    user-select: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;    
+    padding: 0;
+    scrollbar-width: none;
+}
+
+#controls {
+    position: absolute;
+    top: 8%;
+    left: 80%;
+    z-index: 2;
+    padding: 10px;
+    margin: 6px;
+    background: #222222;
+    opacity: 0.8;
+    border: 1px solid rgba(24, 24, 24, 0.75);
+    width: 15%;
+    border-radius: 6px;
+    word-wrap: normal;
+    font-size: 1.0000em;
+    text-align: left;
+    line-height: 1.3;
+    animation: disappear 5s forwards;
+}
+
+#controls h2 {
+    margin: 1rem;
+}
+
+@keyframes disappear {
+    0% {
+        opacity: 0.8;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
+
+    100% {
+        display: none;
+        opacity: 0;
+    }
+}
+
+
+
+#button-wrapper {
+    display: flex;
+    position: absolute;
+    top: 92%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.6375em;
+}
+
+.button-div {
+    margin-left: 0.6250em;
+    margin-right: 0.6250em;
+    margin-top: 6px;
+    background: transparent;
+    text-shadow: 2px 2px #202020;
+    opacity: 0.75;
+    border-radius: 6px;
+    border: none;
+    min-width: 7%;
+    color: #f5f4f0;
+    padding-bottom: 4px;
+    border-bottom: 1px solid;
+    transform: translate(-10%, 0%);
+}
+
+.button-div:active {
+    transform: translate(-10%, 4px);
+    border-bottom: 1px solid #202020;
+}
+
+.button-div:hover {
+    text-shadow: 2px 2px #555555;
+    cursor: pointer;
+}

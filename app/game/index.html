@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel='stylesheet' href='./style.css'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset='UTF-8'>
+    <title> Paradox'23 - Play </title>
+    <link rel="stylesheet" href="./alert.css">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../">Home</a></li>
+                <li><a href="../leaderboard">Leaderboard</a></li>
+                <li><img src="../assets/img/navbar-logo.png" alt="paradox logo"></li>
+                <li><a id="rules-link">Rules</a></li>
+                <li><a href="javascript:localStorage.removeItem('jwt');window.location.href='../login'">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id='mask'> </div>
+    <div id='mask-text'>
+        <div id='mask-header'>
+        </div>
+
+        <div id='mask-subtext'>
+            loading...
+        </div>
+    </div>
+
+    <div id='controls'>
+        <h2 align='center'>Controls</h2>
+        <ul>
+            <li>A, D to move</li>
+            <li>Space to jump</li>
+            <li>E to interact</li>
+            <li>W, S to ascend and descend ladders</li>
+        </ul>
+    </div>
+
+    <script type='module' src='src/Constants.js'> </script>
+    <script type='module' src='src/init.js'> </script>
+
+    <canvas id='canvas'> </canvas>
+
+    <div id="mobile-controls">
+        <div id="dpad">
+            <span class="spacer"></span>
+            <button class="control" id="ctrl-up" data-char="w">↑</button>
+            <span class="spacer"></span>
+            <button class="control" id="ctrl-left" data-char="a">←</button>
+            <span class="spacer center"></span>
+            <button class="control" id="ctrl-right" data-char="d">→</button>
+            <span class="spacer"></span>
+            <button class="control" id="ctrl-down" data-char="s">↓</button>
+            <span class="spacer"></span>
+        </div>
+
+        <div id="action-buttons">
+        <button class="control" id="ctrl-jump" data-char=" ">⇑</button>
+        <button class="control" id="ctrl-interact" data-char="e">●</button>
+        </div>
+    </div>
+
+    <style>
+        @font-face {
+            font-display: swap;
+            font-family: 'Space Mono';
+            font-style: normal;
+            font-weight: 400;
+            src: url('../assets/fonts/space-mono-v12-latin-regular.woff2') format('woff2'),
+                url('../assets/fonts/space-mono-v12-latin-regular.woff') format('woff');
+        }
+
+        body {
+            z-index: 1;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100vw;
+            z-index: 2;
+        }
+
+        nav>ul {
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            gap: 10vw;
+            margin: 0;
+            padding: 0 1rem;
+        }
+
+        nav>ul img {
+            height: 6rem;
+        }
+
+        nav>ul>li {
+            list-style: none;
+            padding: 0.5rem 1rem;
+        }
+
+        nav>ul>li:not(:has(img)) {
+            background: #F8E19D;
+            border-radius: 0.3rem;
+            filter: drop-shadow(0.2rem 0.2rem 0.2rem #CE8C35)
+        }
+
+        nav>ul a {
+            font-family: 'Space Mono';
+            text-decoration: none;
+            color: black;
+            font-weight: bolder;
+            text-shadow: 0 0 0.2rem #CE8C35;
+        }
+
+        @media screen and (max-width: 600px) {
+            nav>ul {
+                padding: 1rem 0.2rem 0rem 0rem;
+                font-size: 0.7rem;
+                gap: 0.75rem;
+            }
+
+            nav li:has(img) {
+                display: none;
+            }
+        }
+    </style>
+</body>
+
+</html>
