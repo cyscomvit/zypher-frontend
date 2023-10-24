@@ -20,17 +20,19 @@ async function talkToServer({ type, method = "GET", body }) {
     }
 }
 
-export function getQuestion() {
+export function getQuestion(question_level) {
     return talkToServer({
         type: 'question',
+        method: "POST",
+        body: {question_level}
     })
 }
 
-export function postAnswer(answer) {
+export function postAnswer(answer, question_level) {
     return talkToServer({
         type: 'answer',
         method: "POST",
-        body: { answer }
+        body: { answer, question_level }
     })
 }
 

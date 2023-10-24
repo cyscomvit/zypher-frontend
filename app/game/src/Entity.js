@@ -2,7 +2,11 @@ import { Vector2 } from "./Vector2.js";
 import { Game } from "./Constants.js";
 import { checkRects } from "./utils.js";
 import { Sprite } from "./Sprite.js";
+import { getUserData } from "../../api.js";
 
+// let answered_levels = ""
+// let answered_levels = await getUserData()
+// console.log(answered_levels)
 export class Entity {
     constructor(options = {}) {
         const {
@@ -19,7 +23,7 @@ export class Entity {
             isAnimated = true,
             ...misc
         } = options;
-
+        
         this.pos = new Vector2(pos.x, pos.y);
         this.vel = new Vector2(0, 0);
         this.type = type;
@@ -134,21 +138,39 @@ export class Entity {
             } else if (this.vel.x < 0) {
                 this.sprite.setPose(`${this.spriteName}_walkL`);
             }
-
+            
             if (this.vel.approximateEquals(new Vector2(0, 0))) {
                 this.sprite.setPose(`${this.spriteName}_idle${this.currentIdle || 'R'}`);
             }
         }
-
+        
+        
+        let answered_levels = Game.userData.answered_levels
+        // convert the string in numbers to array
+        answered_levels = answered_levels.split(",").map(Number)
+        // console.log(answered_levels)
         if (this.spriteName === 'chest') {
-            if (Game.userData.level < this.misc.level) {
-                this.sprite.setPose('chest_inaccessible');
+            // if (Game.userData.scene_reached < this.misc.scene) {
+            //     this.sprite.setPose('chest_inaccessible');
+            // }
+            // else if (Game.userData.level == this.misc.level) {
+            //     this.sprite.setPose('chest_closed');
+            // }
+            // else {
+            //     this.sprite.setPose('chest_open');
+            // }
+
+            // so if a user completes a level, it will be stored in answered_levels and that chest should be open
+            // else if a user dosent complete a level, and he is in the scene that is less than or equal to userData.scene_reached, then the chest should be closed
+            // else the chest should be inaccessible
+            if (answered_levels.includes(this.misc.level)) {
+                this.sprite.setPose('chest_open');
             }
-            else if (Game.userData.level == this.misc.level) {
+            else if (this.misc.scene <= Game.userData.scene_reached) {
                 this.sprite.setPose('chest_closed');
             }
             else {
-                this.sprite.setPose('chest_open');
+                this.sprite.setPose('chest_inaccessible');
             }
         }
 

@@ -63,11 +63,18 @@ export const Game = {
             Game.pressedKeys[e.key] = false;
             if (e.key === "e" && !Game.paused && Game.Player.trigger) {
                 const cause = Game.Player.triggerParent;
+                console.log("cause is:",cause)
                 if (cause.spriteName === "chest") {
-                    if (cause.misc.level < Game.userData.level) return;
-                    if (cause.misc.level == Game.userData.level)
-                        await Game.actions[Game.Player.trigger]();
-                    if (cause.misc.level > Game.userData.level) {
+                    // if (cause.misc.level < Game.userData.level) return;
+                    if(!(Game.userData.answered_levels.includes(cause.misc.level)))
+                        await Game.actions["launch-question"](cause.misc.level);
+
+                    if (cause.misc.scene == Game.userData.scene_reached)
+                    // trying to fetch the question according to the chest level, so that the user can come back to the scene and solve if needed
+                        await Game.actions[Game.Player.trigger](cause.misc.level);
+                    // if the user didnt complete the previous level, he will get this error
+                    // so for us, if the user didnt complete the previous scene and goes to next scene, he should get this error
+                    if (cause.misc.scene > Game.userData.scene_reached) {
                         await message({ text: "You haven't reached that level yet." });
                         return;
                     }
@@ -157,7 +164,7 @@ export const Game = {
         },
         level2: async () => {
             Game.userData = await getUserData();
-            if (Game.userData.level > 5) await loadScene("scene2");
+            if (Game.userData.scene_reached > 1) await loadScene("scene2");
             else
                 await message({
                     text: "You must conquer the current challenge before venturing further. Face this daunting trial and emerge victorious to unlock new realms. Your destiny eagerly awaits your triumph!",
@@ -165,7 +172,7 @@ export const Game = {
         },
         level3: async () => {
             Game.userData = await getUserData();
-            if (Game.userData.level > 10) await loadScene("scene3");
+            if (Game.userData.scene_reached > 2) await loadScene("scene3");
             else
                 await message({
                     text: "You must conquer the current challenge before venturing further. Face this daunting trial and emerge victorious to unlock new realms. Your destiny eagerly awaits your triumph!",
@@ -173,7 +180,7 @@ export const Game = {
         },
         level4: async () => {
             Game.userData = await getUserData();
-            if (Game.userData.level > 15) await loadScene("scene4");
+            if (Game.userData.scene_reached > 3) await loadScene("scene4");
             else
                 await message({
                     text: "You must conquer the current challenge before venturing further. Face this daunting trial and emerge victorious to unlock new realms. Your destiny eagerly awaits your triumph!",
@@ -181,7 +188,7 @@ export const Game = {
         },
         level5: async () => {
             Game.userData = await getUserData();
-            if (Game.userData.level > 20) await loadScene("scene5");
+            if (Game.userData.scene_reached > 4) await loadScene("scene5");
             else
                 await message({
                     text: "You must conquer the current challenge before venturing further. Face this daunting trial and emerge victorious to unlock new realms. Your destiny eagerly awaits your triumph!",
@@ -197,7 +204,7 @@ export const Game = {
         },
         gameends: async () => {
             Game.userData = await getUserData();
-            if (Game.userData.level === 27) {
+            if (Game.userData.scene_reached === 5) {
                 Game.setPause(true);
                 await message({
                     title: "Congratulations!",
@@ -209,16 +216,17 @@ export const Game = {
                     text: "You must conquer the current challenge before venturing further. Face this daunting trial and emerge victorious to unlock new realms. Your destiny eagerly awaits your triumph!",
                 });
         },
-        "launch-question": async () => {
+        "launch-question": async (question_level) => {
             Game.setPause(true);
+            console.log("Question Level:", question_level)
             let level, text, image, correct, error, raw; // hack for reusing variable names
-            ({ level, text, image, raw } = await getQuestion());
+            ({ level, text, image, raw } = await getQuestion(question_level));
             await genericChecks(raw);
 
             const answer = await input({ text: `Level ${level}: ${text}`, imgUrl: image }).catch(
                 noop => noop
             );
-            ({ correct, raw, error } = await postAnswer(answer));
+            ({ correct, raw, error } = await postAnswer(answer, question_level));
             await genericChecks(raw, "submitting your answer");
 
             if (error) {
