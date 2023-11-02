@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zypher</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+    href="https://fonts.googleapis.com/css2?family=Anton&family=Kosugi+Maru&family=League+Spartan:wght@300;800&family=Nunito:wght@300&display=swap"
+    rel="stylesheet"
+    />
+</head>
+<body>
+    <div class="landing-page">
+    <nav>
+        <div class="navbar-left">
+            <div class="logo-container">
+                <img id="cyscomlogo" alt="cyscomlogo" src="cyscom.png" />
+                <span id="cyscom">CYSCOM</span>
+            </div>
+        </div>
+        <div class="navbar-center">
+            <a class="nav-link home" href="/">HOME</a>
+            <a class="nav-link play" href="game/">PLAY</a>
+            <a class="nav-link home" href="login/">LOGIN</a>
+            <a class="nav-link home" href="register/">register</a>
+        </div>
+        <div class="navbar-right">
+            <a class="nav-link" href="leaderboard/">LEADERBOARD</a>
+        </div>
+    </nav>
+    <div class="main">
+    <div class="logo-content">
+        <div class="logo">
+            <img class="zypherlogo" alt="zypherlogo" src="logo.png" />
+        </div>
+    </div>
+    <div class="main-content">
+        <div class="right">
+            <div class="savethedate">Save the date!</div>
+            <div class="date">NOVEMBER 6th</div>
+            <div class="register-container">
+                <div class="button-container">
+                    <a href="">
+                        <button class="register-button">REGISTER NOW</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="left">
+            <div class="decipher">
+                DECIPHER,<span style="color: #507483"> DEFEND,</span> DOMINATE
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    <div class="scroll-down-page">
+        <div class="event-desc">
+            <h1>What is Zypher?</h1>
+            <p>Event Description</p>
+            <ul>
+                <li>Point 1</li>
+                <li>Point 2</li>
+                <li>Point 3</li>
+            </ul>
+        </div>
+        <br>
+        <br>
+        <div class="event-rules">
+            <h1>Event Rules</h1>
+            <ul>
+            <li>Point 1</li>
+            <li>Point 2</li>
+            <li>Point 3</li>
+            </ul>
+        </div>
+    </div>
+    <div class="scroll-down-page">
+        <div class="faq">
+            <h1>Frequently Asked Questions</h1>
+            <div class="faq-box">
+                <div class="query-container">
+                    <div class="question">What is Zypher?</div>
+                    <div class="answer">Zypher is a fun and exciting event that...</div>
+                </div>
+                <div class="query-container">
+                    <div class="question">How can I participate?</div>
+                    <div class="answer">You can participate by...</div>
+                </div>
+            </div>
+
+            <!-- Add more FAQ boxes as needed -->
+        </div>
+    </div>
+    <script>
+        
+
+        if (localStorage.getItem('jwt')) {
+            document.getElementById('login-nav').innerHTML = 'Logout';
+            document.getElementById('login-nav').href = "javascript:localStorage.removeItem('jwt');window.location.reload();";
+        }
+    </script>
+</body>
+</html>
