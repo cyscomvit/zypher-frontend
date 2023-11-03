@@ -41,7 +41,7 @@ export class Sprite {
                     this.size.x, this.size.y, pos.x, pos.y, this.size.x, this.size.y
                 );
             }
-            this.anims[this.poseName].count += this.anims[this.poseName].numSprites * 1 / 60;
+            this.anims[this.poseName].count += this.anims[this.poseName].numSprites ;
         }
     }
 

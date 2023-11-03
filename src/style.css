@@ -1,7 +1,3 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Collegiate+One&family=Raleway+Dots&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Collegiate+One&family=Raleway+Dots&family=Titillium+Web:wght@200&display=swap');
-
 html{
     overflow-x: hidden;
 }
@@ -15,21 +11,37 @@ nav{
     width: 100%;
     background-color: black;
     position: fixed;
-    display: flex;
-    flex-direction: row;
-    height: 70px;
-    align-items: center;
-    justify-content: space-around;
     top: 0;
     z-index: 100000;
 }
-.navbar-center{
+.nav-content-mobile{
+    display: none;
+}
+
+
+.nav-content {
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
     display: flex;
-    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    height: 100px;
+    font-family: "Nunito", sans-serif;
+    font-size: 25px;
+}
+.logo-container{
+    display: flex;
+    align-items: center;
+}
+.navbar-center {
+    text-align: center;
     align-items: center;
 }
 .navbar-right {
     text-align: right;
+    /* margin-right: 20px !important; */
 }
 #cyscomlogo {
     width: 60px;
@@ -41,24 +53,10 @@ nav{
     color: white;
     margin-left: 10px;
 }
-.main{
-    padding-top: 12vh;
-    display: flex;
-    flex-direction: column;
-    align-self: center;
-    background-image: url(bg.png);
-    background-size: cover;
-    background-attachment: fixed;
-}
-.logo-container{
-    display: flex;
-    align-items: center;
-}
-
 .nav-link {
     color: white;
     text-decoration: none;
-    margin: 0 20px;
+    margin-left: 1em;
 }
 .play {
     padding: 5px 20px;
@@ -80,16 +78,16 @@ nav{
 }
 .zypherlogo {
     width: 300px;
-    height: 180px;
+    height: auto;
     margin: 0 auto;
 }
 .main-content {
-    display: flex;
-    flex-direction: row;
     padding-top: 130px;
     position: relative;
+    background-image: url("bg.png");
     background-size: cover;
     background-repeat: no-repeat;
+    background-attachment: fixed;
     min-height: 100vh;
 }
 .content-container{
@@ -101,14 +99,10 @@ nav{
 }
 .left, .right{
     width: 100%;
-    margin: 0 3vw;
 }
 .decipher {
+    position: relative;
     padding: 20px 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content:center;
-    text-align: right;
     font-family: "League Spartan";
     font-style: normal;
     font-weight: 800;
@@ -150,12 +144,12 @@ nav{
     font-style: normal;
     font-weight: 600;
     font-size: 50px;
-    letter-spacing: 0.03em;
     color: rgba(255, 255, 255, 0.75);
-    border: 3px solid #fff;
+    background-color: #6c9baf;
+    border: 3px solid #507483;
     border-radius: 38px;
     -webkit-text-stroke: 3px #507483;
-    transition: 0.3s, color 0.3s;
+    transition: background-color 0.3s, color 0.3s;
     cursor: pointer;
 }
 .register-button:hover {
@@ -165,94 +159,55 @@ nav{
 @media (max-width: 1130px) {
     .body {
         position: relative;
-    }
-    .main{
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    .main-content{
-        flex-direction: column;
-        align-items: center;
-        justify-self: center;
-        text-align: center;
-    }
-    .righ, .left{
-        margin: 10vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-}
-@media (max-width: 700px) {
-    .main-content{
-        flex-direction: column;
-        align-items: center;
-        justify-self: center;
-    }
+   }
+    .main-content {
+        display: inline-table;
+   }
 }
 @media (max-width: 635px) {
     nav{
-        padding: 10px 0 0;
-        font-size: 10px;
-    }
-    #cyscomlogo {
-        width: 40px;
-        height: 40px;
-    }
-    #cyscom {
-        font-size: 15px;
+        padding: 0;
     }
     .nav-content {
-        display: none;
-        flex-direction: column;
-        height: auto;
-        width: 100%;
-        padding: 20px 0;
-    }
-    .nav-content-mobile{
-        display: block;
-        max-width: 1200px;
+        display: flex;
+        height: 35px;
         width: 90%;
-        margin: 0 auto;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0;
-        height: auto;
-        font-family: "Nunito", sans-serif;
-        font-size: 25px;
+        padding: 20px 0;
+        font-size: 20px;
     }
-    .navbar-center{
-        display: flex;
-        flex-direction: row;
-    }
-    .home{
-        margin-right: 2px;
-    }
-    .play{
-        margin-right: 0 ;
-    }
-    .row-one{
-        display: flex;
+    .navbar-left, .navbar-right{
+        width: 50%;
         align-items: center;
     }
-    
+    #cyscomlogo {
+        width: 50px;
+        height: 50px;
+    }
+    #cyscom {
+        font-size: 20px;
+        font-weight: bold;
+        color: white;
+        margin-left: 5px;
+    }
     .logo-container{
         width: 100%;
         margin: 0 auto;
         text-align: center;
     }
-    
+    .navbar-right{
+        text-align: right;
+        margin-right: 5px;
+    }
     .zypherlogo {
         width: 200px;
         height: auto;
         margin: 0 auto;
     }
     .logo-content{
-        margin-top: 144.5px;
+        margin-top: 50px;
     }
     .main-content{
-        padding-top: 160px;
+        padding-top: 100px;
     }
     .content-container{
         text-align: center;
@@ -305,16 +260,16 @@ nav{
 .scroll-down-page {
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     position: relative;
     background-image: url("bg2.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    min-height: 100vh;
+    background-color: #071b30;
+    /* min-height: 100vh; */
+    display: inline-table;
+    align-items: center;
+    justify-content: center;
     width: 100vw;
     padding: 30px 0;
 }
@@ -323,7 +278,7 @@ nav{
     width: 90%;
 }
 .event-desc {
-     
+    margin: 0 auto;
     font-family: "Nunito";
     font-style: normal;
     font-weight: 600;
@@ -338,6 +293,7 @@ nav{
     margin-bottom: 5px;
 }
 .event-rules {
+    margin: 0 auto;
     font-family: "Nunito";
     font-style: normal;
     font-weight: 600;
@@ -373,38 +329,76 @@ nav{
 .query-container{
     border: 1px solid #ddd;
     border: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 .faq-box .question {
     background-color: #354443;
-    padding: 15px;
+    padding: 10px;
     font-size: 25px;
     font-weight: bold;
     font-family: "Nunito";
     text-decoration: none;
     color: #fce4bc;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
+    border: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
 }
 .faq-box .answer {
-    background-color: #fce4bc;
-    padding: 15px;
+    height: 0;
+    overflow: hidden;
+    padding: 0;
+    background-color: #cfbd9c;
+    /* padding: 15px; */
     font-size: 25px;
     font-family: "Nunito";
     text-decoration: none;
-    color: #555;
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px;
+    color: #424141;
+    margin-top: 5px;
 }
-/* .faq-box:hover {
-    background-color: #e0e0e0;
-} */
+.faq-box .question:hover{
+    background-color: #4c6260;
+}
+@media (max-width: 635px) {
+    .event-section h1{
+        font-size: 35px;
+    }
+    .event-section ul li, .event-section p{
+        font-size: 20px;
+    }
+    .faq h1{
+        font-size: 25px;
+    }
+    .faq-box .question{
+        font-size: 20px;
+        padding: 10px;
+    }
+    .faq-box .answer{
+        font-size: 20px;
+    }
+}
 .landing-page {
     background-attachment: fixed;
 }
 .scroll-down-page {
     background-attachment: fixed;
 }
-/* footer{
+footer{
+    font-family: "Nunito", sans-serif;
     background-color: black;
-} */
+    color: white;
+    align-items: center;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 20px;
+}
+footer p{
+    margin: 0;
+    margin-bottom: 20px;
+}
+footer a img{
+    height: 35px;
+    width: 35px;
+    border-radius: 50px;
+    margin: 0 2.5px;
+}

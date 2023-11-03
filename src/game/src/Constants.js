@@ -235,11 +235,11 @@ export const Game = {
         "launch-question": async (question_level) => {
             Game.setPause(true);
             console.log("Question Level:", question_level)
-            let level, text, image, correct, error, raw; // hack for reusing variable names
-            ({ level, text, image, raw } = await getQuestion(question_level));
+            let level, text, url, correct, error, raw; // hack for reusing variable names
+            ({ level, text, url, raw } = await getQuestion(question_level));
             await genericChecks(raw);
 
-            const answer = await input({ text: `Level ${level}: ${text}`, imgUrl: image }).catch(
+            const answer = await input({ text: `Level ${level}: ${text}`, url: url }).catch(
                 noop => noop
             );
             ({ correct, raw, error } = await postAnswer(answer, question_level));

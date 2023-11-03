@@ -1,12 +1,12 @@
 export const ASSET_LIST = [
     {
         name: "ss_1_fbking_walkL.png",
-        url: "assets/imgNew/ss_8_fbking_walkL.png",
+        url: "assets/imgNew/ss_1_fbking_walkL.png",
         type: "img",
     },
     {
         name: "ss_1_fbking_walkR.png",
-        url: "assets/imgNew/ss_8_fbking_walkR.png",
+        url: "assets/imgNew/ss_1_fbking_walkR.png",
         type: "img",
     },
     {

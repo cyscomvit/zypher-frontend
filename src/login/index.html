@@ -2,173 +2,259 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zypher | Login</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zypher - Login | CYSCOM</title>
+
+    <link rel="stylesheet" type="text/css" href="/login/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Kosugi+Maru&family=League+Spartan:wght@300;800&family=Nunito:wght@300&display=swap"
+        rel="stylesheet" />
+
+    <link rel="shortcut icon" href="/assets/images/zypher.png" type="image/x-icon">
 </head>
 
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="../">Home</a></li>
-                <li><a href="../leaderboard">Leaderboard</a></li>
-                <li><img src="../assets/img/navbar-logo.png" alt="paradox logo"></li>
-                <li><a href="../game">Play</a></li>
-                <li><a href="../register">Register</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <div>
-            <h1>LOGIN</h1>
-            <form>
-                <label for="username">Username</label>
-                <input type="text" name="username" placeholder="username..." id="username">
-                <label for="password">Password</label>
-                <input type="password" name="password" placeholder="password..." id="password">
-                <input type="submit" value="LOGIN">
-                <p id="error"></p>
-            </form>
+    <div class="container">
+        <div class="content">
+            <div class="nav-content">
+                <div class="navbar-left">
+                    <div class="logo-container">
+                        <img id="cyscomlogo" alt="cyscomlogo" src="../cyscom.png" />
+                        <span id="cyscom">CYSCOM</span>
+                        <a href="/src" id="home">Home</a>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="form-container">
+                <div class="zyper-logo-container">
+                    <div class="zypher-logo-content">
+                        <div class="logo">
+                            <img class="zypherlogo" alt="zypherlogo" src="../logo.png" />
+                        </div>
+                    </div>
+                </div>
+                <form>
+                    <div class="input-box">
+                        <input type="text" name="username" placeholder="username..." id="username" required />
+                        <input type="password" name="password" id="password" placeholder="Password" required />
+                    </div>
+                    <input type="submit" value="LOGIN" class="btn"></input>
+                    <p id="error"></p>
+                </form>
+            </div>
         </div>
-    </main>
+    </div>
     <style>
-        @font-face {
-            font-family: 'Lord Story Demo';
-            src: url('../assets/fonts/Lordstorydemo-L3zgy.ttf');
-            display: swap;
-        }
-
-        @font-face {
-            font-display: swap;
-            font-family: 'Space Mono';
-            font-style: normal;
-            font-weight: 400;
-            src: url('../assets/fonts/space-mono-v12-latin-regular.woff2') format('woff2'),
-                url('../assets/fonts/space-mono-v12-latin-regular.woff') format('woff');
-        }
-
-        html,
         body {
             margin: 0;
             padding: 0;
-            overflow: hidden;
+            background-color: #071b30;
+            overflow-x: hidden;
         }
 
-        body {
-            background: url('../assets/img/login-register-bg.png');
+        .container {
+            background-image: url("../bg.png");
             background-size: cover;
-            background-position: center;
             background-repeat: no-repeat;
             background-attachment: fixed;
-
-            font-family: 'Lord Story Demo', cursive;
-
-            height: 100vh;
-
-            font-size: 0.9rem;
+            min-height: 100vh;
+            margin-bottom: 50px;
         }
 
-        main {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            height: 100%;
-        }
-
-        header {
-            margin: 0;
-        }
-
-        header,
         nav {
             width: 100%;
+            z-index: 100000;
         }
 
-        nav>ul {
-            margin: 0;
-            padding: 0 1rem;
+        .nav-content {
+            max-width: 1200px;
+            width: 90%;
+            margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 0 20px;
+            height: 100px;
+            font-family: "Nunito", sans-serif;
+            font-size: 25px;
         }
 
-        nav>ul img {
-            height: 6rem;
-        }
-
-        nav>ul>li {
-            list-style: none;
-            padding: 0.5rem 1rem;
-        }
-
-        nav>ul>li:not(:has(img)) {
-            background: #F8E19D;
-            border-radius: 0.3rem;
-            filter: drop-shadow(0.2rem 0.2rem 0.2rem #CE8C35)
-        }
-
-        nav>ul a {
-            font-family: 'Space Mono';
+        #home{
+            color: white;
             text-decoration: none;
-            color: black;
-            font-weight: bolder;
-            text-shadow: 0 0 0.2rem #CE8C35;
+            margin-left: 2em;
         }
 
-        main>div {
-            margin: auto;
+        .logo-container {
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            padding: 0px;
+            height: 100px;
+            font-family: "Nunito", sans-serif;
+            font-size: 25px;
         }
 
-        h1 {
+        #cyscomlogo {
+            width: 60px;
+            height: 60px;
+        }
+
+        #cyscom {
+            font-size: 25px;
+            font-weight: bold;
+            color: white;
+            margin-left: 10px;
+        }
+
+        .form-container {
+            background-color: #0b2036;
+            box-shadow: 0px 0px 100px 10px #000000ce;
+            width: 375px;
+            margin: 0 auto;
+            border-radius: 20px;
+            padding: 30px 50px;
+            color: white;
             text-align: center;
         }
 
-        form {
-            display: flex;
-            flex-direction: column;
+        .zyphper-logo-content {
+            margin-top: 100px;
         }
 
-        label {
-            padding: 0.4rem;
+        .logo {
+            width: fit-content;
+            margin: 0 auto;
+            height: auto;
+            padding-top: 20px;
         }
 
-        input {
-            padding: 1rem;
-            margin-bottom: 1rem;
+        .zypherlogo {
+            width: 250px;
+            height: auto;
+            margin: 0 auto;
+        }
+
+        .form {
+            width: 100%;
+        }
+
+        .input-box {
+            margin: 50px 0;
+            display: grid;
+        }
+
+        .input-box input {
+            width: 353px;
+            height: 30px;
+            padding: 5px 10px;
+            font-size: 17px;
+            background-color: hsla(0, 0%, 100%, .8);
+            border-color: #d2d2d7;
+            border: 1.5px solid #071b30;
+            font-family: "text-font-light";
             border-radius: 15px;
+        }
+
+        button {
+            padding: 15px 25px 10px;
+            background-color: transparent;
             border: none;
-            background: #FFFAD4;
-            font-size: 1.5rem;
-        }
-
-        input::placeholder {
-            font-family: 'Lord Story Demo', cursive;
-        }
-
-        input[type=submit] {
+            text-decoration: none;
+            font-family: "League Spartan";
+            font-style: normal;
+            font-size: 25px;
+            letter-spacing: 0.03em;
+            color: rgba(255, 255, 255, 0.75);
+            background-color: #6c9baf;
+            border: 2px solid #507483;
+            border-radius: 38px;
+            transition: background-color 0.3s, color 0.3s;
             cursor: pointer;
+            margin-bottom: 20px;
         }
 
-        input[type=submit]:hover {
-            transform: scale(105%);
-            transition: transform 0.2s ease-in-out;
+        button:focus,
+        button:hover {
+            background-color: #507483;
+            color: #fff;
         }
 
-        @media screen and (min-width: 600px) {
-            body {
-                font-size: 1.5rem;
-            }
-        }
-
-        @media screen and (max-width: 600px) {
-            nav>ul {
-                padding: 1rem 0.2rem;
+        @media (max-width: 635px) {
+            .content {
+                max-width: 100%;
+                margin: 0 auto;
             }
 
-            nav li:has(img) {
-                display: none;
+            nav {
+                padding: 0;
+            }
+
+            .nav-content {
+                display: flex;
+                height: 35px;
+                width: 90%;
+                padding: 20px 0;
+                font-size: 20px;
+            }
+
+            .navbar-left {
+                width: 50%;
+                align-items: center;
+            }
+
+            #cyscomlogo {
+                width: 50px;
+                height: 50px;
+            }
+
+            #cyscom {
+                font-size: 20px;
+                font-weight: bold;
+                color: white;
+                margin-left: 5px;
+            }
+
+            .zypherlogo {
+                width: 150px;
+                height: auto;
+                margin: 0 auto;
+            }
+
+            .form-container {
+                background-color: #0b2036;
+                box-shadow: 0px 0px 100px 10px #000000ce;
+                max-width: 375px;
+                width: 90%;
+                margin: 0 auto;
+                border-radius: 20px;
+                padding: 15px 0px;
+                color: white;
+                text-align: center;
+            }
+
+            .input-box {
+                margin: 25px 0;
+                display: grid;
+            }
+
+            .input-box input {
+                width: 80%;
+                height: 30px;
+                padding: 5px 10px;
+                margin: 0px auto;
+                font-size: 17px;
+                background-color: hsla(0, 0%, 100%, .8);
+                border-color: #d2d2d7;
+                border: 1.5px solid #071b30;
+                font-family: "text-font-light";
+                border-radius: 15px;
             }
         }
     </style>

@@ -8,11 +8,6 @@
     <title> ZYPHER - Play </title>
     <link rel="stylesheet" href="./alert.css">
 </head>
-<style>
-    body {
-        background-image: url('src\game\assets\imgNew\background_two.png');
-    }
-</style>
 
 <body>
 
@@ -21,7 +16,7 @@
             <ul>
                 <li><a href="../">Home</a></li>
                 <li><a href="../leaderboard">Leaderboard</a></li>
-                <li><img src="../assets/img/navbar-logo.png" alt="paradox logo"></li>
+                <li><img src="../logo.png" alt="zypher logo"></li>
                 <li><a id="rules-link">Rules</a></li>
                 <li><a href="javascript:localStorage.removeItem('jwt');window.location.href='../login'">Logout</a></li>
             </ul>
@@ -67,8 +62,8 @@
         </div>
 
         <div id="action-buttons">
-        <button class="control" id="ctrl-jump" data-char=" ">⇑</button>
-        <button class="control" id="ctrl-interact" data-char="e">●</button>
+            <button class="control" id="ctrl-jump" data-char=" ">⇑</button>
+            <button class="control" id="ctrl-interact" data-char="e">●</button>
         </div>
     </div>
 
@@ -113,9 +108,9 @@
         }
 
         nav>ul>li:not(:has(img)) {
-            background: #F8E19D;
+            background: rgb(127, 141, 221);
             border-radius: 0.3rem;
-            filter: drop-shadow(0.2rem 0.2rem 0.2rem #CE8C35)
+            filter: drop-shadow(0.2rem 0.2rem 0.2rem #3584ce)
         }
 
         nav>ul a {
@@ -123,7 +118,7 @@
             text-decoration: none;
             color: black;
             font-weight: bolder;
-            text-shadow: 0 0 0.2rem #CE8C35;
+            text-shadow: 0 0 0.2rem #2e56c2;
         }
 
         @media screen and (max-width: 600px) {

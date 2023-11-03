@@ -66,18 +66,17 @@ function message({ text, title = 'Info', customLabel = 'OK', safeBody = true }) 
     })
 }
 
-function input({ text, title = 'Input', safeBody = true, imgUrl = undefined }) {
+function input({ text, title = 'Input', safeBody = true, url = undefined }) {
     const [header, body, footer, mask] = create();
     return new Promise((resolve, reject) => {
         try {
             header.innerHTML = cf.escape(title);
             body.innerHTML = safeBody ? cf.escape(text) : text;
 
-            if (imgUrl) {
-                cf.insert(cf.nu('img#alert-image', {
-                    misc: {
-                        src: imgUrl
-                    }
+            if (url) {
+                cf.insert(cf.nu('a#alert-url', {
+                    attrs: { href: url, target: '_blank' },
+                    c: url
                 }), { atEndOf: body });
             }
 
