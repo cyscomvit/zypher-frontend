@@ -2,10 +2,13 @@
 
 This is the frontend code for Zypher
 
+Landing page:
 ![landing page](/imgs/pic_one.png)
 
+Gameplay:
 ![gameplay](/imgs/pic_gameplay.png)
 
+Leaderboard:
 ![leaderboard](/imgs/Final.png)
 
 Clone the repo then
