@@ -20,6 +20,7 @@ npm install
 npm start
 ```
 To start the backend at port 8080, so that the game can work
+We are using Canvas for gameplay, JQuery, registration and login is done by a custom sqlite db,  and JWT for authentication and authorization.
 
 
 # Contributors
