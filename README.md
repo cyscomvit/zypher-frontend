@@ -23,6 +23,9 @@ To start the backend at port 8080, so that the game can work
 We are using Canvas for gameplay, JQuery, registration and login is done by a custom sqlite db,  and JWT for authentication and authorization.
 
 
+This was deployed on Azure Static Web Apps.
+
+
 # Contributors
 
 Overall - Nishanth, Karthik, Ezhil
