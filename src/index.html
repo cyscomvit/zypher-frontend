@@ -72,7 +72,10 @@
                 </div>
                 <br>
                 <div class="event-section event-desc">
-                    <h1>About Zypher</h1>
+                    <div class="center">
+
+                        <h1>About Zypher</h1> 
+                    </div>
                     <p>
                         Zypher is not just a CTF event; it's an unforgettable experience. Our dynamic narrative will
                         test your problem-solving prowess as you decrypt puzzles and unearth hidden clues, all while
@@ -82,7 +85,13 @@
                 </div>
                 <br>
                 <div class="event-section event-desc">
-                    <h1>Event Details</h1>
+                    <div class="center">
+
+                        <h1>Event Details</h1>
+                    </div>
+
+                <div class="center">
+
                     <ul>
                         <li><u>Date:</u> November 6th, 2023</li>
                         <li><u>Time:</u> 9:00 AM - 6:00 PM</li>
@@ -90,9 +99,11 @@
                         <li><u>Team Size:</u> 1-3</li>
                     </ul>
                 </div>
+                </div>
                 <br>
                 <div class="event-section event-desc">
-                    <h1>About Zypher</h1>
+
+                    
                     <p>
                         At Zypher, we believe in rewarding your passion for cybersecurity. Here are some of the perks
                         you can look forward to:
@@ -110,7 +121,28 @@
                 </div>
                 <br>
                 <div class="event-section event-desc">
-                    <h1>Event Coordinators</h1>
+                    <div class="center">
+
+                        <h1>Platinum Sponsor</h1>
+                    </div>
+                    <div class="image-container">
+                        <div class="background flex">
+    
+                            <img src="saptang_logo.svg" alt="sponsor-logo">
+                            <p>Saptang Labs</p>
+                        </div>
+
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="event-section event-desc">
+                    <div class="margin-wrapper">
+                        <div class="center">
+
+                            <h1>Event Coordinators</h1>
+                        </div>
+                    </div>
                     <p><b>Student Coordinators</b></p>
                     <ul>
                         <li>• Afzal Ahamed - 9489626783</li>
@@ -216,22 +248,22 @@
         <footer>
             <p>CYSCOM, VIT Chennai</p>
             <div class="footer-links">
-                <a href="https://facebook.com/cyscomvit/"><img src="/assets/icons/facebook.png" alt="" height="32"
+                <a href="https://facebook.com/cyscomvit/"><img src="facebook.png" alt="" height="32"
                         width="32"></a>
                 <!-- &nbsp; -->
-                <a href="https://instagram.com/cyscomvit/"><img src="/assets/icons/instagram.png" alt="" height="32"
+                <a href="https://instagram.com/cyscomvit/"><img src="instagram.png" alt="" height="32"
                         width="32"></a>
                 <!-- &nbsp; -->
-                <a href="https://twitter.com/CyscomVit/"><img src="/assets/icons/x.png" alt="" height="32"
+                <a href="https://twitter.com/CyscomVit/"><img src="x.png" alt="" height="32"
                         width="32"></a>
                 <!-- &nbsp; -->
-                <a href="https://www.linkedin.com/company/cyscomvit/"><img src="/assets/icons/linkedin.png" alt=""
+                <a href="https://www.linkedin.com/company/cyscomvit/"><img src="linkedin.png" alt=""
                         height="32" width="32"></a>
                 <!-- &nbsp; -->
-                <a href="https://github.com/cyscomvit/"><img src="/assets/icons/github.png" alt="" height="32"
+                <a href="https://github.com/cyscomvit/"><img src="github.png" alt="" height="32"
                         width="32"></a>
                 <!-- &nbsp; -->
-                <a href="https://discord.gg/9RyHCQgjAv"><img src="/assets/icons/discord.png" alt="" height="32"
+                <a href="https://discord.gg/9RyHCQgjAv"><img src="discord.png" alt="" height="32"
                         width="32"></a>
                 <!-- &nbsp; -->
             </div>
@@ -260,9 +292,9 @@
         if (localStorage.getItem('jwt')) {
             document.getElementById('login-nav').innerHTML = 'Logout';
             document.getElementById('login-nav').href = "javascript:localStorage.removeItem('jwt');window.location.reload();";
-
+            document.getElementById('reg-nav').remove();
             document.getElementById('play-toggle').innerHTML = 'PLAY';
-            document.getElementById('play-toggle').href = 'game';
+            document.getElementById('play-toggle').href = 'game/';
         }
 
     </script>

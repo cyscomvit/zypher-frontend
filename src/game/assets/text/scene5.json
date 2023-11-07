@@ -1,6 +1,6 @@
 {
   "name": "intro",
-  "bg": "background.png",
+  "bg": "background_middle.png",
   "player": {
     "pos": { "x": 20, "y": 125 },
     "sprite": "fbking",
@@ -60,6 +60,15 @@
       "width": 33,
       "height": 101
     },
+    "coin": {
+      "type": "coin",
+      "etype": "KTRIGGER",
+      "sprite": "coin",
+      "isAnimated": false,
+      "width": 49,
+      "height": 40,
+      "action": "coin"
+    },
     "platform": {
       "etype": "platform",
       "type": "platform",
@@ -78,6 +87,8 @@
     { "extends": "chest", "pos": { "x": 125, "y": 210 }, "level": 8, "scene":5 },
     {"extends":"slim-platform","pos":{ "x": 10, "y": 450 }},
     { "extends": "slim-platform", "pos": { "x": 10, "y": 250 } },
+
+    { "extends": "coin", "pos": { "x": 100, "y": 410 }, "action":"displayDesc5"},
     
     {"extends":"slim-platform","pos":{ "x": 10, "y": 450 }},
     { "extends": "slim-platform", "pos": { "x": 70, "y": 450 } },
@@ -100,7 +111,7 @@
     { "extends": "slim-platform", "pos": { "x": 440, "y": 350 } },
    
     {"extends": "chest", "pos": { "x": 490, "y": 310 }, "level": 9, "scene":5 },
-    { "extends": "platform", "pos": { "x": 831, "y": 446 } },
+    { "extends": "slim-platform", "pos": { "x": 831, "y": 450 } },
     { "extends": "door", "pos": { "x": 919, "y": 316 }, "action": "level6" }
   ]
 }

@@ -18,6 +18,38 @@ nav{
     display: none;
 }
 
+.flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+
+}
+.background{
+    background-color: white;
+    padding: 0;
+    margin-left: 12em;
+    margin-right: 12em;
+    padding-top: 3em;
+    padding-bottom: 3em;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+
+    
+    
+
+
+
+
+
+
+.flex p{
+    color: black;
+    
+    padding: 0.5em;
+}
 
 .nav-content {
     max-width: 1200px;
@@ -163,11 +195,27 @@ nav{
     .main-content {
         display: inline-table;
    }
+
+   .background {
+    margin-left: 7em;
+    margin-right: 7em;
+    padding-left: 0;
+    padding-right: 0;
+   
+   }
 }
 @media (max-width: 635px) {
     nav{
         padding: 0;
     }
+
+    .background{
+        margin-left: 2em;
+        margin-right: 2em;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
     .nav-content {
         display: flex;
         height: 35px;
@@ -307,6 +355,17 @@ nav{
 .event-rules ul li {
     margin-bottom: 5px;
 }
+.center {
+    max-width: 90%;
+    margin: 0 auto;
+    font-family: "Nunito";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    text-align: center;
+    color: #ffffff;
+}
+
 .faq {
     max-width: 90%;
     margin: 0 auto;

@@ -1,6 +1,6 @@
 {
   "name": "intro",
-  "bg": "background.png",
+  "bg": "background_start.png",
   "player": {
     "pos": { "x": 20, "y": 125 },
     "sprite": "fbking",
@@ -44,6 +44,15 @@
       "height": 40,
       "action": "launch-question"
     },
+    "coin": {
+      "type": "coin",
+      "etype": "KTRIGGER",
+      "sprite": "coin",
+      "isAnimated": false,
+      "width": 49,
+      "height": 40,
+      "action": "coin"
+    },
     "slim-platform": {
       "etype": "platform",
       "type": "slim-platform",
@@ -76,6 +85,7 @@
     { "extends": "xbound", "pos": { "x": 1014, "y": 0 } },
     { "extends": "door", "pos": { "x": 30, "y": 125 }, "action":"level1" },
     { "extends": "chest", "pos": { "x": 125, "y": 210 }, "level": 1, "scene":1 },
+    { "extends": "coin", "pos": { "x": 100, "y": 410 }, "action":"displayDesc1"},
     
     {"extends":"slim-platform","pos":{ "x": 10, "y": 450 }},
     { "extends": "slim-platform", "pos": { "x": 10, "y": 250 } },

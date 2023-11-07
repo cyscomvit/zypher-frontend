@@ -1,322 +1,447 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Zypher - Register | CYSCOM</title>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Zypher - Register | CYSCOM</title>
+		<link rel="stylesheet" type="text/css" href="/register/css/style.css" />
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Anton&family=Kosugi+Maru&family=League+Spartan:wght@300;800&family=Nunito:wght@300&display=swap"
+			rel="stylesheet"
+		/>
 
-    <link rel="stylesheet" type="text/css" href="/register/css/style.css" />
-    <link rel="stylesheet" type="text/css" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Anton&family=Kosugi+Maru&family=League+Spartan:wght@300;800&family=Nunito:wght@300&display=swap"
-        rel="stylesheet" />
+		<link
+			rel="shortcut icon"
+			href="/assets/images/zypher.png"
+			type="image/x-icon"
+		/>
+	</head>
 
-    <link rel="shortcut icon" href="/assets/images/zypher.png" type="image/x-icon">
-</head>
+	<body>
+		<div class="container">
+			<div class="content">
+				<div class="nav-content">
+					<div class="navbar-left">
+						<div class="logo-container">
+							<img id="cyscomlogo" alt="cyscomlogo" src="../cyscom.png" />
+							<span id="cyscom">CYSCOM</span>
+							<a href="/" id="home">Home</a>
+						</div>
+					</div>
+				</div>
+				<br />
+				<br />
+				<div class="form-container">
+					<div class="zyper-logo-container">
+						<div class="zypher-logo-content">
+							<div class="logo">
+								<img class="zypherlogo" alt="zypherlogo" src="../logo.png" />
+							</div>
+						</div>
+					</div>
+					<form>
+						<div class="input-box">
+							<input
+								type="text"
+								name="username"
+								placeholder="Username"
+								id="username"
+								required
+							/>
+							<input
+								type="password"
+								namw="password"
+								placeholder="Password"
+								id="password"
+								required
+							/>
+							<br />
+							<input
+								type="text"
+								name="member_1_name"
+								placeholder="Name - Member 1"
+								id="member_1_name"
+								required
+							/>
+							<input
+								type="text"
+								name="member_1_regno"
+								placeholder="Register Number"
+								id="member_1_regno"
+								required
+							/>
+							<br />
+							<input
+								type="text"
+								name="member_2_name"
+								placeholder="Name - Member 2 (NA if none)"
+								id="member_2_name"
+								required
+							/>
+							<input
+								type="text"
+								name="member_2_regno"
+								placeholder="Register Number (NA if none)"
+								id="member_2_regno"
+								required
+							/>
+							<br />
+							<input
+								type="text"
+								name="member_3_name"
+								placeholder="Name - Member 3 (NA if none)"
+								id="member_3_name"
+								required
+							/>
+							<input
+								type="text"
+								name="member_3_regno"
+								placeholder="Register Number (NA if none)"
+								id="member_3_regno"
+								required
+							/>
+						</div>
+						<input type="submit" value="REGISTER" class="btn" />
+						<p id="error"></p>
+					</form>
+				</div>
+			</div>
+		</div>
+		<style>
+			body {
+				margin: 0;
+				padding: 0;
+				background-color: #071b30;
+				overflow-x: hidden;
+			}
 
-<body>
-    <div class="container">
-        <div class="content">
-            <div class="nav-content">
-                <div class="navbar-left">
-                    <div class="logo-container">
-                        <img id="cyscomlogo" alt="cyscomlogo" src="../cyscom.png" />
-                        <span id="cyscom">CYSCOM</span>
-                        <a href="/src" id="home">Home</a>
-                    </div>
-                </div>
-            </div>
-            <br>
-            <br>
-            <div class="form-container">
-                <div class="zyper-logo-container">
-                    <div class="zypher-logo-content">
-                        <div class="logo">
-                            <img class="zypherlogo" alt="zypherlogo" src="../logo.png" />
-                        </div>
-                    </div>
-                </div>
-                <form>
-                    <div class="input-box">
-                        <input type="text" name="username" placeholder="Username" id="username" required />
-                        <input type="password" namw="password" placeholder="Password" id="password" required />
-                        <br>
-                        <input type="text" name="member_1_name" placeholder="Name - Member 1" id="member_1_name"
-                            required />
-                        <input type="text" name="member_1_regno" placeholder="Register Number" id="member_1_regno"
-                            required />
-                        <br>
-                        <input type="text" name="member_2_name" placeholder="Name - Member 2 (optional)"
-                            id="member_2_name" />
-                        <input type="text" name="member_2_regno" placeholder="Register Number (optional)"
-                            id="member_2_regno" />
-                        <br>
-                        <input type="text" name="member_3_name" placeholder="Name - Member 3 (optional)"
-                            id="member_3_name" />
-                        <input type="text" name="member_3_regno" placeholder="Register Number (optional)"
-                            id="member_3_regno" />
-                    </div>
-                    <input type="submit" value="REGISTER" class="btn" />
-                    <p id="error"></p>
-                </form>
-            </div>
-        </div>
-    </div>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #071b30;
-            overflow-x: hidden;
-        }
+			::placeholder {
+				font-family: 'Nunito', sans-serif;
+			}
 
-        .container {
-            background-image: url("../bg.png");
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            min-height: 100vh;
-            margin-bottom: 50px;
-        }
+			.container {
+				background-image: url('../bg.png');
+				background-size: cover;
+				background-repeat: no-repeat;
+				background-attachment: fixed;
+				min-height: 100vh;
+				margin-bottom: 50px;
+			}
 
-        nav {
-            width: 100%;
-            z-index: 100000;
-        }
+			nav {
+				width: 100%;
+				z-index: 100000;
+			}
 
-        .nav-content {
-            max-width: 1200px;
-            width: 90%;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
-            height: 100px;
-            font-family: "Nunito", sans-serif;
-            font-size: 25px;
-        }
+			.nav-content {
+				max-width: 1200px;
+				width: 90%;
+				margin: 0 auto;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				padding: 0 20px;
+				height: 100px;
+				font-family: 'Nunito', sans-serif;
+				font-size: 25px;
+			}
 
-        .logo-container {
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            padding: 0px;
-            height: 100px;
-            font-family: "Nunito", sans-serif;
-            font-size: 25px;
-        }
+			.logo-container {
+				margin: 0 auto;
+				display: flex;
+				align-items: center;
+				padding: 0px;
+				height: 100px;
+				font-family: 'Nunito', sans-serif;
+				font-size: 25px;
+			}
 
-        #cyscomlogo {
-            width: 60px;
-            height: 60px;
-        }
+			#cyscomlogo {
+				width: 60px;
+				height: 60px;
+			}
 
-        #cyscom {
-            font-size: 25px;
-            font-weight: bold;
-            color: white;
-            margin-left: 10px;
-        }
+			#cyscom {
+				font-size: 25px;
+				font-weight: bold;
+				color: white;
+				margin-left: 10px;
+			}
 
-        #home{
-            text-decoration: none;
-            color: white;
-            margin-left: 2em;
-        }
+			#home {
+				text-decoration: none;
+				color: white;
+				margin-left: 2em;
+			}
 
-        .form-container {
-            background-color: #0b2036;
-            box-shadow: 0px 0px 100px 10px #000000ce;
-            width: 375px;
-            margin: 0 auto;
-            border-radius: 20px;
-            padding: 30px 50px;
-            color: white;
-            text-align: center;
-        }
+			.form-container {
+				background-color: #0b2036;
+				box-shadow: 0px 0px 100px 10px #000000ce;
+				width: 375px;
+				margin: 0 auto;
+				border-radius: 20px;
+				padding: 30px 50px;
+				color: white;
+				text-align: center;
+			}
 
-        .zyphper-logo-content {
-            margin-top: 100px;
-        }
+			.zyphper-logo-content {
+				margin-top: 100px;
+			}
 
-        .logo {
-            width: fit-content;
-            margin: 0 auto;
-            height: auto;
-            padding-top: 20px;
-        }
+			.logo {
+				width: fit-content;
+				margin: 0 auto;
+				height: auto;
+				padding-top: 20px;
+			}
 
-        .zypherlogo {
-            width: 250px;
-            height: auto;
-            margin: 0 auto;
-        }
+			.zypherlogo {
+				width: 250px;
+				height: auto;
+				margin: 0 auto;
+			}
 
-        .form {
-            width: 100%;
-        }
+			.form {
+				width: 100%;
+			}
 
-        .input-box {
-            margin: 50px 0;
-            display: grid;
-        }
+			.input-box {
+				margin: 25px 0;
+				display: grid;
+			}
 
-        .input-box input {
-            width: 353px;
-            height: 30px;
-            padding: 5px 10px;
-            font-size: 17px;
-            background-color: hsla(0, 0%, 100%, .8);
-            border-color: #d2d2d7;
-            border: 1.5px solid #071b30;
-            font-family: "text-font-light";
-            border-radius: 15px;
-        }
+			.input-box input {
+				width: 353px;
+				height: 30px;
+				padding: 5px 10px;
+				margin-top: 15px;
+				font-size: 17px;
+				background-color: hsla(0, 0%, 100%, 0.8);
+				border-color: #d2d2d7;
+				border: 1.5px solid #071b30;
+				font-family: 'text-font-light';
+				border-radius: 10px;
+			}
 
-        button {
-            padding: 15px 25px 10px;
-            background-color: transparent;
-            border: none;
-            text-decoration: none;
-            font-family: "League Spartan";
-            font-style: normal;
-            font-size: 25px;
-            letter-spacing: 0.03em;
-            color: rgba(255, 255, 255, 0.75);
-            background-color: #6c9baf;
-            border: 2px solid #507483;
-            border-radius: 38px;
-            transition: background-color 0.3s, color 0.3s;
-            cursor: pointer;
-            margin-bottom: 20px;
-        }
+			button {
+				padding: 15px 25px 10px;
+				background-color: transparent;
+				border: none;
+				text-decoration: none;
+				font-family: 'League Spartan';
+				font-style: normal;
+				font-size: 25px;
+				letter-spacing: 0.03em;
+				color: rgba(255, 255, 255, 0.75);
+				background-color: #6c9baf;
+				border: 2px solid #507483;
+				border-radius: 38px;
+				transition: background-color 0.3s, color 0.3s;
+				cursor: pointer;
+				margin-bottom: 20px;
+			}
 
-        input{
-            margin-top: 1em;
-        }
+			input {
+				margin-top: 1em;
+			}
 
-        button:focus,
-        button:hover {
-            background-color: #507483;
-            color: #fff;
-        }
+			button:focus,
+			button:hover {
+				background-color: #507483;
+				color: #fff;
+			}
 
-        @media (max-width: 635px) {
-            .content {
-                max-width: 100%;
-                margin: 0 auto;
-            }
+			.btn {
+				/* Minimal button */
+				padding: 15px 25px 10px;
+				border-radius: 38px;
+			}
 
-            nav {
-                padding: 0;
-            }
+			.btn:focus,
+			.btn:hover {
+				background-color: #507483;
+				color: #fff;
+			}
 
-            .nav-content {
-                display: flex;
-                height: 35px;
-                width: 90%;
-                padding: 20px 0;
-                font-size: 20px;
-            }
+			.btn:active {
+				background-color: #6c9baf;
+				color: rgba(255, 255, 255, 0.75);
+			}
 
-            .navbar-left {
-                width: 50%;
-                align-items: center;
-            }
+			@media (max-width: 635px) {
+				.content {
+					max-width: 100%;
+					margin: 0 auto;
+				}
 
-            #cyscomlogo {
-                width: 50px;
-                height: 50px;
-            }
+				nav {
+					padding: 0;
+				}
 
-            #cyscom {
-                font-size: 20px;
-                font-weight: bold;
-                color: white;
-                margin-left: 5px;
-            }
+				.nav-content {
+					display: flex;
+					height: 35px;
+					width: 90%;
+					padding: 20px 0;
+					font-size: 20px;
+				}
 
-            .zypherlogo {
-                width: 150px;
-                height: auto;
-                margin: 0 auto;
-            }
+				.navbar-left {
+					width: 50%;
+					align-items: center;
+				}
 
-            .form-container {
-                background-color: #0b2036;
-                box-shadow: 0px 0px 100px 10px #000000ce;
-                max-width: 375px;
-                width: 90%;
-                margin: 0 auto;
-                border-radius: 20px;
-                padding: 15px 0px;
-                color: white;
-                text-align: center;
-            }
+				#cyscomlogo {
+					width: 50px;
+					height: 50px;
+				}
 
-            .input-box {
-                margin: 25px 0;
-                display: grid;
-            }
+				#cyscom {
+					font-size: 20px;
+					font-weight: bold;
+					color: white;
+					margin-left: 5px;
+				}
 
-            .input-box input {
-                width: 80%;
-                height: 30px;
-                padding: 5px 10px;
-                margin: 0px auto;
-                font-size: 17px;
-                background-color: hsla(0, 0%, 100%, .8);
-                border-color: #d2d2d7;
-                border: 1.5px solid #071b30;
-                font-family: "text-font-light";
-                border-radius: 15px;
-            }
-        }
-    </style>
+				.zypherlogo {
+					width: 150px;
+					height: auto;
+					margin: 0 auto;
+				}
 
-    <script type="module">
-        import { BACKEND } from '../api.js';
+				.form-container {
+					background-color: #0b2036;
+					box-shadow: 0px 0px 100px 10px #000000ce;
+					max-width: 375px;
+					width: 90%;
+					margin: 0 auto;
+					border-radius: 20px;
+					padding: 15px 0px;
+					color: white;
+					text-align: center;
+				}
 
-        const form = document.querySelector('form');
-        const username = document.querySelector('#username');
-        const password = document.querySelector('#password');
-        const member_1_name = document.querySelector('#member_1_name');
-        const member_1_regno = document.querySelector('#member_1_regno');
-        const member_2_name = document.querySelector('#member_2_name');
-        const member_2_regno = document.querySelector('#member_2_regno');
-        const member_3_name = document.querySelector('#member_3_name');
-        const member_3_regno = document.querySelector('#member_3_regno');
-        const errorFeedback = document.querySelector('#error');
-        form.addEventListener('submit', e => {
-            e.preventDefault();
-            fetch(`${BACKEND}/register`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    username: username.value,
-                    password: password.value,
-                    member_1_name: member_1_name.value,
-                    member_1_regno: member_1_regno.value,
-                    member_2_name: member_2_name.value,
-                    member_2_regno: member_2_regno.value,
-                    member_3_name: member_3_name.value,
-                    member_3_regno: member_3_regno.value,
-                }),
-            }).then(res => res.json()).then(data => {
-                if (data.error) {
-                    errorFeedback.innerHTML = data.error;
-                    return;
-                }
-                window.location.href = '../login';
-            });
-        });
-    </script>
-</body>
+				.input-box {
+					margin: 25px 0;
+					display: grid;
+				}
 
+				.input-box input {
+					width: 80%;
+					height: 30px;
+					padding: 5px 10px;
+					margin: 0px auto;
+					font-size: 17px;
+					background-color: hsla(0, 0%, 100%, 0.8);
+					border-color: #d2d2d7;
+					border: 1.5px solid #071b30;
+					font-family: 'text-font-light';
+					border-radius: 15px;
+				}
+			}
+		</style>
+
+		<script type="module">
+			import { BACKEND } from '../api.js';
+
+			const form = document.querySelector('form');
+			const username = document.querySelector('#username');
+			const password = document.querySelector('#password');
+			const member_1_name = document.querySelector('#member_1_name');
+			const member_1_regno = document.querySelector('#member_1_regno');
+			const member_2_name = document.querySelector('#member_2_name');
+			const member_2_regno = document.querySelector('#member_2_regno');
+			const member_3_name = document.querySelector('#member_3_name');
+			const member_3_regno = document.querySelector('#member_3_regno');
+			const errorFeedback = document.querySelector('#error');
+			form.addEventListener('submit', (e) => {
+				e.preventDefault();
+				// checking if name and regno satisfies the regex and each regno and name are unique
+				// const registrationNumberPattern = /^\d{2}[A-Z]{3}\d{4}$/;
+				// const namePattern = /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/;
+				// if (!registrationNumberPattern.test(member_1_regno.value)) {
+				//     errorFeedback.innerHTML = 'Invalid Registration Number';
+				//     return;
+				// }
+				// if (!namePattern.test(member_1_name.value)) {
+				//     errorFeedback.innerHTML = 'Invalid Name';
+				//     return;
+				// }
+				// if (member_2_name.value !== 'NA') {
+				//     if (!registrationNumberPattern.test(member_2_regno.value)) {
+				//         errorFeedback.innerHTML = 'Invalid Registration Number';
+				//         return;
+				//     }
+				//     if (!namePattern.test(member_2_name.value)) {
+				//         errorFeedback.innerHTML = 'Invalid Name';
+				//         return;
+				//     }
+				// }
+				// if (member_3_name.value !== 'NA') {
+				//     if (!registrationNumberPattern.test(member_3_regno.value)) {
+				//         errorFeedback.innerHTML = 'Invalid Registration Number';
+				//         return;
+				//     }
+				//     if (!namePattern.test(member_3_name.value)) {
+				//         errorFeedback.innerHTML = 'Invalid Name';
+				//         return;
+				//     }
+				// }
+				// // if (member_1_regno.value === member_2_regno.value || member_1_regno.value === member_3_regno.value ||
+				// //     member_2_regno.value === member_3_regno.value) {
+				// //     errorFeedback.innerHTML = 'Registration Number should be unique';
+				// //     return;
+				// // }
+				// // if (member_1_name.value === member_2_name.value || member_1_name.value === member_3_name.value ||
+				// //     member_2_name.value === member_3_name.value) {
+				// //     errorFeedback.innerHTML = 'Name should be unique';
+				// //     return;
+				// // }
+
+				// if (!(member_2_name === 'NA' && member_2_regno === 'NA' && member_3_name === 'NA' && member_3_regno === 'NA')) {
+				//     console.log("HIi")
+				//     errorFeedback.innerHTML = 'Name and registration number should be unique'
+				//     return;
+				// }
+				// if (!(member_3_name === 'NA' && member_3_regno === 'NA')) {
+				//     errorFeedback.innerHTML = 'Name and registration number should be unique'
+				//     return;
+				// }
+
+				fetch(`${BACKEND}/register`, {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json',
+					},
+					body: JSON.stringify({
+						username: username.value,
+						password: password.value,
+						member_1_name: member_1_name.value,
+						member_1_regno: member_1_regno.value,
+						member_2_name: member_2_name.value,
+						member_2_regno: member_2_regno.value,
+						member_3_name: member_3_name.value,
+						member_3_regno: member_3_regno.value,
+					}),
+				})
+					.then((res) => res.json())
+					.then((data) => {
+						if (data.error) {
+							errorFeedback.innerHTML = data.error;
+							return;
+						}
+						window.location.href = '../login';
+					});
+			});
+		</script>
+	</body>
 </html>

@@ -25,7 +25,7 @@
                     <div class="logo-container">
                         <img id="cyscomlogo" alt="cyscomlogo" src="../cyscom.png" />
                         <span id="cyscom">CYSCOM</span>
-                        <a href="/src" id="home">Home</a>
+                        <a href="/" id="home">Home</a>
 
                     </div>
                 </div>
@@ -269,7 +269,7 @@
 
             data.forEach(({
                 username,
-                level
+                points
             }, i) => {
                 const tr = document.createElement('tr');
                 const td1 = document.createElement('td');
@@ -278,7 +278,7 @@
 
                 td1.textContent = i + 1;
                 td2.textContent = cf.escape(username);
-                td3.textContent = level;
+                td3.textContent = points;
 
                 tr.appendChild(td1);
                 tr.appendChild(td2);

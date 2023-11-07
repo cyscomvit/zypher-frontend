@@ -106,6 +106,11 @@ export const ASSET_LIST = [
         type:"text",
     },
     {
+        name:"scene9.json",
+        url:"assets/text/scene9.json",
+        type:"text",
+    },
+    {
         name: "background.png",
         url: "assets/imgNew/background.png",
         type: "img",
@@ -113,6 +118,21 @@ export const ASSET_LIST = [
     {
         name:"background_two.png",
         url:"assets/imgNew/background_two.png",
+        type:"img",
+    },
+    {
+        name:"background_start.png",
+        url:"assets/imgNew/background_start.png",
+        type:"img",
+    },
+    {
+        name:"background_middle.png",
+        url:"assets/imgNew/background_middle.png",
+        type:"img",
+    },
+    {
+        name:"background_final.png",
+        url:"assets/imgNew/background_final.png",
         type:"img",
     }
 ];

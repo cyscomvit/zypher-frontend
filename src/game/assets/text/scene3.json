@@ -1,6 +1,6 @@
  {
   "name": "intro",
-  "bg": "background.png",
+  "bg": "background_middle.png",
   "player": {
     "pos": { "x": 20, "y": 125 },
     "sprite": "fbking",
@@ -52,6 +52,15 @@
       "width": 193,
       "height": 53
     },
+    "coin": {
+      "type": "coin",
+      "etype": "KTRIGGER",
+      "sprite": "coin",
+      "isAnimated": false,
+      "width": 49,
+      "height": 40,
+      "action": "coin"
+    },
     "ladder": {
       "type": "ladder",
       "etype": "ladder",
@@ -78,6 +87,8 @@
     { "extends": "chest", "pos": { "x": 125, "y": 210 }, "level": 4 , "scene":3},
     {"extends":"slim-platform","pos":{ "x": 10, "y": 450 }},
     { "extends": "slim-platform", "pos": { "x": 10, "y": 250 } },
+
+    { "extends": "coin", "pos": { "x": 100, "y": 410 }, "action":"displayDesc3"},
     
     {"extends":"slim-platform","pos":{ "x": 10, "y": 450 }},
     { "extends": "slim-platform", "pos": { "x": 70, "y": 450 } },
